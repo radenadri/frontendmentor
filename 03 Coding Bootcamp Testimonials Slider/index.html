@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- displays site properly based on user's device -->
+
+	<link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+	<title>Frontend Mentor | Coding Bootcamp Testimonials Slider</title>
+</head>
+
+<body>
+	<div class="wrapper">
+		<main class="content">
+
+			<div class="slider">
+
+				<div class="slider-item">
+
+					<div class="slider-caption">
+						<div class="slider-caption-list text-show fade">
+							<h1 class="text">
+								“ I’ve been interested in coding for a while but never taken the jump, until now.
+								I couldn’t recommend this course enough. I’m now in the job of my dreams and so
+								excited about the future. ”
+							</h1>
+							<div class="details">
+								<h4>Tanya Sinclair</h4>
+								<span>UX Engineer</span>
+							</div>
+						</div>
+						<div class="slider-caption-list text-show fade">
+							<h1 class="text">
+								“ If you want to lay the best foundation possible I’d recommend taking this course.
+								The depth the instructors go into is incredible. I now feel so confident about
+								starting up as a professional developer. ”
+							</h1>
+							<div class="details">
+								<h4>John Tarkpor</h4>
+								<span>Junior Front-end Developer</span>
+							</div>
+						</div>
+					</div>
+					<div class="slider-img">
+						<div class="slider-img-list">
+							<img class="image-show fade" src="./images/image-tanya.jpg" alt="Tanya images" />
+						</div>
+						<div class="slider-img-list">
+							<img class="image-show fade" src="./images/image-john.jpg" alt="John images" />
+						</div>
+
+						<div class="slider-controls">
+							<button class="slider-navigation left" onclick="nextSlide(-1)">
+								<svg xmlns="http://www.w3.org/2000/svg" width="12" height="18">
+									<path fill="none" stroke="#8585AC" stroke-width="3" d="M11 1L3 9l8 8" /></svg>
+							</button>
+							<button class="slider-navigation right" onclick="nextSlide(1)">
+								<svg xmlns="http://www.w3.org/2000/svg" width="13" height="18">
+									<path fill="none" stroke="#8585AC" stroke-width="3" d="M2 1l8 8-8 8" /></svg>
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</main>
+
+		<footer class="attribution">
+			<!-- <img src="./images/pattern-curve.svg" alt=""> -->
+			<div>
+				Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+				Coded by <a href="https://github.com/radenadri">radenadri</a>.
+			</div>
+		</footer>
+	</div>
+	<script src="./dist/bundle.js"></script>
+	<script type="text/javascript">
+		let idx = 1;
+
+		displaySlides(1);
+
+		function nextSlide(n) {
+			displaySlides((idx += n));
+		}
+
+		function displaySlides(n) {
+			let i;
+			let images = document.getElementsByClassName('image-show');
+			let quotes = document.getElementsByClassName('text-show');
+
+			if (n > images.length) {
+				idx = 1;
+			}
+
+			if (n < 1) {
+				idx = images.length;
+			}
+
+			for (i = 0; i < images.length; i++) {
+				images[i].style.display = 'none';
+				quotes[i].style.display = 'none';
+			}
+
+			images[idx - 1].style.display = 'block';
+			quotes[idx - 1].style.display = 'block';
+
+		}
+	</script>
+</body>
+
+</html>

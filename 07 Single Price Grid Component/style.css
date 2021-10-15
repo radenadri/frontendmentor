@@ -1,0 +1,143 @@
+:root {
+  --color-primary-cyan: hsl(179, 62%, 43%);
+  --color-primary-bright-yellow: hsl(71, 73%, 54%);
+  --color-neutral-light-gray: hsl(204, 43%, 93%);
+  --color-neutral-grayish-blue: hsl(218, 22%, 67%);
+  --color-body-bg: hsl(204, 43%, 93%);
+  --color-amount: hsl(179, 43%, 75%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  font-size: 16px;
+  font-family: Karla, sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-body-bg);
+}
+
+body {
+  padding: 20px;
+}
+
+h1 { font-size: 32px; }
+h2 { font-size: 24px; }
+p { font-size: 18px; }
+
+.content {
+  display: flex;
+  flex: 1;
+}
+
+.box {
+  background-color: #FFF;
+  border-radius: 10px;
+  box-shadow: 0 5px 10px 10px rgb(0 0 0 / 5%);
+  max-width: 800px;
+  width: 800px;
+  margin: auto;
+  overflow: hidden;
+}
+
+.row {
+  display: flex;
+}
+
+.row > div {
+  padding: 35px;
+}
+
+.join .title {
+  color: var(--color-primary-cyan);
+  margin: 20px 0;
+}
+
+.join .subtitle {
+  color: var(--color-primary-bright-yellow);
+  margin: 20px 0;
+}
+
+.join .description {
+  color: var(--color-neutral-grayish-blue);
+}
+
+.subscription {
+  background-color: var(--color-primary-cyan);
+  color: #FFF;
+  flex: 1;
+}
+
+.subscription .subtitle { margin-bottom: 20px; }
+
+.subscription .amount {
+  color: var(--color-amount);
+  display: flex;
+  align-items: center;
+  margin: 16px 0;
+}
+
+.subscription .amount .big {
+  color: #FFF;
+  font-size: 50px;
+  margin-right: 10px;
+}
+
+.subscription .description { margin: 16px 0; }
+
+.subscription .sign-up {
+  background-color: var(--color-primary-bright-yellow);
+  border-radius: 5px;
+  border: none;
+  box-shadow: 0 5px 10px 10px rgb(0 0 0 / 5%);
+  color: #FFF;
+  font-family: Karla, sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  padding: 20px 0;
+  margin-top: 15px;
+  width: 100%;
+}
+
+.why-us {
+  background-color: var(--color-primary-cyan);
+  opacity: .8;
+  color: #FFF;
+  flex: 1;
+}
+
+.why-us .subtitle {
+  margin-bottom: 20px;
+}
+
+.why-us ul {
+  list-style-type: none;
+  padding: 0;
+  opacity: .7;
+}
+
+.why-us ul li {
+  line-height: 28px;
+}
+
+.attribution { 
+  font-size: 11px; 
+  text-align: center; 
+}
+
+.attribution a { color: var(--color-primary-cyan); }
+
+@media screen and (max-width: 700px) {
+  .row {
+    flex-direction: column;
+  }
+
+  .attribution {
+    margin-top: 20px;
+  }
+}
